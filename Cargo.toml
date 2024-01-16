@@ -1,0 +1,34 @@
+[package]
+name = "tnaps"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[dev-dependencies]
+arrrg = { path = "../blue/arrrg", version = "0.3" }
+guacamole = { path = "../blue/guacamole", version = "0.6" }
+proptest = "1.0"
+statslicer = { path = "../blue/statslicer", version = "0.1" }
+
+[[bench]]
+name = "apply"
+harness = false
+
+[[bench]]
+name = "entity_map"
+harness = false
+
+[[bench]]
+name = "system"
+harness = false
+
+[[bench]]
+name = "system_parallel"
+harness = false
+
+[profile.release]
+debug = true
+lto = true
+opt-level = 3
+panic = "abort"
